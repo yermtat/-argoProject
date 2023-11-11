@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "СargoProject", "СargoProject\СargoProject.csproj", "{27AE539C-23A1-4A4A-B30D-8516F4D60ACD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27AE539C-23A1-4A4A-B30D-8516F4D60ACD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27AE539C-23A1-4A4A-B30D-8516F4D60ACD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27AE539C-23A1-4A4A-B30D-8516F4D60ACD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27AE539C-23A1-4A4A-B30D-8516F4D60ACD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {580C890C-25A3-4E03-9061-B7EC4D9D6418}
+	EndGlobalSection
+EndGlobal

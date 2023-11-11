@@ -1,0 +1,45 @@
+﻿<Application x:Class="СargoProject.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:СargoProject"
+             xmlns:viewModels="clr-namespace:СargoProject.ViewModels"
+             xmlns:views="clr-namespace:СargoProject.Views">
+
+    <Application.Resources>
+
+        <ResourceDictionary>
+
+            <DataTemplate DataType="{x:Type viewModels:DeclareViewModel}">
+                <views:DeclareView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModels:LoginViewModel}">
+                <views:LoginView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModels:PlaceOrderViewModel}">
+                <views:PlaceOrderView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModels:SignUpViewModel}">
+                <views:SignUpView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModels:UserMainViewModel}">
+                <views:UserMainView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModels:UserSettingsViewModel}">
+                <views:UserSettingsView/>
+            </DataTemplate>
+
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

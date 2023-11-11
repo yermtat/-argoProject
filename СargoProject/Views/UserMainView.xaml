@@ -1,0 +1,150 @@
+﻿<UserControl x:Class="СargoProject.Views.UserMainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:СargoProject.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1024">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0"
+                    Orientation="Horizontal">
+            <Button Height="50"
+                        Width="200"
+                        Margin="10" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
+                        Background="MediumSeaGreen"
+                        Foreground="AliceBlue"
+                        Content="User Settings"
+                        FontSize="25">
+
+            </Button>
+            <Button Height="50"
+                        Width="200"
+                        Margin="10" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
+                        Background="MediumSeaGreen"
+                        Foreground="AliceBlue"
+                        Content="Place Order"
+                        FontSize="25">
+
+            </Button>
+            <Button Height="50"
+                        Width="200"
+                        Margin="10" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
+                        Background="MediumSeaGreen"
+                        Foreground="AliceBlue"
+                        Content="Declare"
+                        FontSize="25">
+
+            </Button>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1"
+                    Orientation="Horizontal">
+            <Button Height="100"
+                        Width="200"
+                        Margin="10" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
+                        Content="Discount"
+                        FontSize="25">
+
+            </Button>
+            <Button Height="100"
+                        Width="200"
+                        Margin="10" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
+                        Content="Balance"
+                        FontSize="25">
+
+            </Button>
+            <Button Height="100"
+                        Width="200"
+                        Margin="10" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
+                        Content="Cashback"
+                        FontSize="25">
+
+            </Button>
+            <Button Height="100"
+                        Width="200"
+                        Margin="10" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
+                        Content="Last 30 day"
+                        FontSize="25">
+
+            </Button>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="2"
+                    Orientation="Horizontal">
+            <Button Height="50"
+                        Width="130"
+                        Margin="5" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
+                        Background="LightSlateGray"
+                        Foreground="AliceBlue"
+                        Content="Packages"
+                        FontSize="20">
+
+            </Button>
+            <Button Height="50"
+                        Width="130"
+                        Margin="5" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
+                        Background="LightSlateGray"
+                        Foreground="AliceBlue"
+                        Content="Orders"
+                        FontSize="20">
+
+            </Button>
+            <Button Height="50"
+                        Width="130"
+                        Margin="5" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
+                        Background="LightSlateGray"
+                        Foreground="AliceBlue"
+                        Content="Shipped"
+                        FontSize="20">
+
+            </Button>
+            <Button Height="50"
+                        Width="130"
+                        Margin="5" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
+                        Background="LightSlateGray"
+                        Foreground="AliceBlue"
+                        Content="Shipped"
+                        FontSize="20">
+
+            </Button>
+            <Button Height="50"
+                        Width="130"
+                        Margin="5" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
+                        Background="LightSlateGray"
+                        Foreground="AliceBlue"
+                        Content="In Filial"
+                        FontSize="20">
+
+            </Button>
+            <Button Height="50"
+                        Width="130"
+                        Margin="5" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
+                        Background="LightSlateGray"
+                        Foreground="AliceBlue"
+                        Content="On Courier"
+                        FontSize="20">
+
+            </Button>
+            <Button Height="50"
+                        Width="130"
+                        Margin="5" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
+                        Background="LightSlateGray"
+                        Foreground="AliceBlue"
+                        Content="History"
+                        FontSize="20">
+
+            </Button>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

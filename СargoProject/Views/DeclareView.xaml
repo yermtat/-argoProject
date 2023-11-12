@@ -5,8 +5,216 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:СargoProject.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="768" d:DesignWidth="1024">
     <Grid>
-            
+
+        <Grid
+              HorizontalAlignment="Center"
+              VerticalAlignment="center"
+              Height="600"
+              Width="900">
+
+            <Border Background="white"
+                    CornerRadius="20"
+                    Style="{DynamicResource MaterialDesignToolBarMainPanelBorderStyle}"/>
+
+            <StackPanel>
+
+                <TextBlock FontSize="20"
+                           FontWeight="Bold"
+                           Margin="5">
+                    Preparation for declaration
+                </TextBlock>
+
+
+                <TextBox Height="35"
+                         FontSize="15"
+                         Margin="5 0 15 0"
+                         md:HintAssist.Hint="ex: www.trendyol.com"
+                         md:HintAssist.HintOpacity="0.5"
+                         md:TextFieldAssist.HasOutlinedTextField="True"
+                         md:TextFieldAssist.UnderlineBrush="Gray"
+                         md:TextFieldAssist.DecorationVisibility="Collapsed"
+                         md:TextFieldAssist.TextBoxViewMargin="5"
+                         md:HintAssist.HelperTextFontSize="10"
+                         />
+
+                <Grid Margin="0 20 0 0" Height="312">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0"
+                                Grid.Column="0">
+
+                        <TextBlock FontSize="20"
+                           FontWeight="Bold"
+                           Margin="5"
+                           Text="Size">
+
+                        </TextBlock>
+
+
+                        <TextBox Height="35"
+                         FontSize="15"
+                         Margin="5 0 15 0"
+                         md:HintAssist.Hint="ex: S"
+                         md:HintAssist.HintOpacity="0.5"
+                         md:TextFieldAssist.HasOutlinedTextField="True"
+                         md:TextFieldAssist.UnderlineBrush="Gray"
+                         md:TextFieldAssist.DecorationVisibility="Collapsed"
+                         md:TextFieldAssist.TextBoxViewMargin="5"
+                         md:HintAssist.HelperTextFontSize="10"
+                         md:HintAssist.HelperText="required field"
+                         />
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="0"
+                                Grid.Column="1">
+
+                        <TextBlock FontSize="20"
+                           FontWeight="Bold"
+                           Margin="5"
+                           Text="Colour">
+
+                        </TextBlock>
+
+
+                        <TextBox Height="35"
+                         FontSize="15"
+                         Margin="5 0 15 0"
+                         md:HintAssist.Hint="ex: black"
+                         md:HintAssist.HintOpacity="0.5"
+                         md:TextFieldAssist.HasOutlinedTextField="True"
+                         md:TextFieldAssist.UnderlineBrush="Gray"
+                         md:TextFieldAssist.DecorationVisibility="Collapsed"
+                         md:TextFieldAssist.TextBoxViewMargin="5"
+                         md:HintAssist.HelperTextFontSize="10"
+                         md:HintAssist.HelperText="required field"
+                         />
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="0"
+                                Grid.Column="2">
+
+                        <TextBlock FontSize="20"
+                           FontWeight="Bold"
+                           Margin="5"
+                           Text="Special notes">
+
+                        </TextBlock>
+
+
+                        <TextBox Height="35"
+                         FontSize="15"
+                         Margin="5 0 15 0"
+                         md:HintAssist.Hint="Special notes"
+                         md:HintAssist.HintOpacity="0.5"
+                         md:TextFieldAssist.HasOutlinedTextField="True"
+                         md:TextFieldAssist.UnderlineBrush="Gray"
+                         md:TextFieldAssist.DecorationVisibility="Collapsed"
+                         md:TextFieldAssist.TextBoxViewMargin="5"
+                         md:HintAssist.HelperTextFontSize="10"
+                         />
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1"
+                                Grid.Column="0">
+
+                        <TextBlock FontSize="20"
+                           FontWeight="Bold"
+                           Margin="5"
+                           Text="Quantity">
+
+                        </TextBlock>
+
+
+                        <TextBox Height="35"
+                         FontSize="15"
+                         Margin="5 0 15 0"
+                         md:HintAssist.Hint="ex: 1"
+                         md:HintAssist.HintOpacity="0.5"
+                         md:TextFieldAssist.HasOutlinedTextField="True"
+                         md:TextFieldAssist.UnderlineBrush="Gray"
+                         md:TextFieldAssist.DecorationVisibility="Collapsed"
+                         md:TextFieldAssist.TextBoxViewMargin="5"
+                         md:HintAssist.HelperTextFontSize="10"
+                         md:HintAssist.HelperText="required field"
+                         />
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1"
+                                Grid.Column="1">
+
+                        <TextBlock FontSize="20"
+                           FontWeight="Bold"
+                           Margin="5"
+                           Text="Price (TL)">
+
+                        </TextBlock>
+
+
+                        <TextBox Height="35"
+                         FontSize="15"
+                         Margin="5 0 15 0"
+                         md:HintAssist.Hint="ex: 100"
+                         md:HintAssist.HintOpacity="0.5"
+                         md:TextFieldAssist.HasOutlinedTextField="True"
+                         md:TextFieldAssist.UnderlineBrush="Gray"
+                         md:TextFieldAssist.DecorationVisibility="Collapsed"
+                         md:TextFieldAssist.TextBoxViewMargin="5"
+                         md:HintAssist.HelperTextFontSize="10"
+                         md:HintAssist.HelperText="required field"
+                         />
+
+                    </StackPanel>
+
+
+                    <StackPanel Grid.Row="1"
+                                Grid.Column="2">
+
+                        <TextBlock FontSize="20"
+                           FontWeight="Bold"
+                           Margin="5"
+                           Text="Shop delivery price (TL)">
+
+                        </TextBlock>
+
+
+                        <TextBox Height="35"
+                         FontSize="15"
+                         Margin="5 0 15 0"
+                         md:HintAssist.Hint="0"
+                         md:HintAssist.HintOpacity="0.5"
+                         md:TextFieldAssist.HasOutlinedTextField="True"
+                         md:TextFieldAssist.UnderlineBrush="Gray"
+                         md:TextFieldAssist.DecorationVisibility="Collapsed"
+                         md:TextFieldAssist.TextBoxViewMargin="5"
+                         md:HintAssist.HelperTextFontSize="10"
+                         md:HintAssist.HelperText="required field"
+                         />
+
+                    </StackPanel>
+
+
+
+                </Grid>
+
+            </StackPanel>
+
+        </Grid>
     </Grid>
 </UserControl>

@@ -28,27 +28,17 @@
                 </TextBlock>
 
 
-                <TextBox Height="35"
-                         FontSize="15"
-                         Margin="5 0 15 0"
-                         md:HintAssist.Hint="ex: www.trendyol.com"
-                         md:HintAssist.HintOpacity="0.5"
-                         md:TextFieldAssist.HasOutlinedTextField="True"
-                         md:TextFieldAssist.UnderlineBrush="Gray"
-                         md:TextFieldAssist.DecorationVisibility="Collapsed"
-                         md:TextFieldAssist.TextBoxViewMargin="5"
-                         md:HintAssist.HelperTextFontSize="10"
-                         />
-
-                <Grid Margin="0 20 0 0" Height="312">
+                <Grid Margin="0 20 0 0" Height="544">
 
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
                     <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
@@ -59,7 +49,7 @@
                         <TextBlock FontSize="20"
                            FontWeight="Bold"
                            Margin="5"
-                           Text="Size">
+                           Text="Warehouse">
 
                         </TextBlock>
 
@@ -67,7 +57,7 @@
                         <TextBox Height="35"
                          FontSize="15"
                          Margin="5 0 15 0"
-                         md:HintAssist.Hint="ex: S"
+                         md:HintAssist.Hint="ex: Turkey"
                          md:HintAssist.HintOpacity="0.5"
                          md:TextFieldAssist.HasOutlinedTextField="True"
                          md:TextFieldAssist.UnderlineBrush="Gray"
@@ -85,7 +75,7 @@
                         <TextBlock FontSize="20"
                            FontWeight="Bold"
                            Margin="5"
-                           Text="Colour">
+                           Text="Site name">
 
                         </TextBlock>
 
@@ -93,7 +83,7 @@
                         <TextBox Height="35"
                          FontSize="15"
                          Margin="5 0 15 0"
-                         md:HintAssist.Hint="ex: black"
+                         md:HintAssist.Hint="ex: www.trendyol.com"
                          md:HintAssist.HintOpacity="0.5"
                          md:TextFieldAssist.HasOutlinedTextField="True"
                          md:TextFieldAssist.UnderlineBrush="Gray"
@@ -105,13 +95,13 @@
 
                     </StackPanel>
 
-                    <StackPanel Grid.Row="0"
-                                Grid.Column="2">
+                    <StackPanel Grid.Row="1"
+                                Grid.Column="0">
 
                         <TextBlock FontSize="20"
                            FontWeight="Bold"
                            Margin="5"
-                           Text="Special notes">
+                           Text="Tracking number">
 
                         </TextBlock>
 
@@ -119,18 +109,44 @@
                         <TextBox Height="35"
                          FontSize="15"
                          Margin="5 0 15 0"
-                         md:HintAssist.Hint="Special notes"
                          md:HintAssist.HintOpacity="0.5"
                          md:TextFieldAssist.HasOutlinedTextField="True"
                          md:TextFieldAssist.UnderlineBrush="Gray"
                          md:TextFieldAssist.DecorationVisibility="Collapsed"
                          md:TextFieldAssist.TextBoxViewMargin="5"
                          md:HintAssist.HelperTextFontSize="10"
+                         md:HintAssist.HelperText="required field"
                          />
 
                     </StackPanel>
 
                     <StackPanel Grid.Row="1"
+                                Grid.Column="1">
+
+                        <TextBlock FontSize="20"
+                           FontWeight="Bold"
+                           Margin="5"
+                           Text="Product category">
+
+                        </TextBlock>
+
+
+                        <TextBox Height="35"
+                         FontSize="15"
+                         Margin="5 0 15 0"
+                         md:HintAssist.Hint="ex: clothes"
+                         md:HintAssist.HintOpacity="0.5"
+                         md:TextFieldAssist.HasOutlinedTextField="True"
+                         md:TextFieldAssist.UnderlineBrush="Gray"
+                         md:TextFieldAssist.DecorationVisibility="Collapsed"
+                         md:TextFieldAssist.TextBoxViewMargin="5"
+                         md:HintAssist.HelperTextFontSize="10"
+                         md:HintAssist.HelperText="required field"
+                         />
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="2"
                                 Grid.Column="0">
 
                         <TextBlock FontSize="20"
@@ -144,7 +160,55 @@
                         <TextBox Height="35"
                          FontSize="15"
                          Margin="5 0 15 0"
-                         md:HintAssist.Hint="ex: 1"
+                         md:HintAssist.HintOpacity="0.5"
+                         md:TextFieldAssist.HasOutlinedTextField="True"
+                         md:TextFieldAssist.UnderlineBrush="Gray"
+                         md:TextFieldAssist.DecorationVisibility="Collapsed"
+                         md:TextFieldAssist.TextBoxViewMargin="5"
+                         md:HintAssist.HelperTextFontSize="10"
+                         md:HintAssist.HelperText="required field"
+                         />
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="2"
+                                Grid.Column="1">
+
+                        <TextBlock FontSize="20"
+                           FontWeight="Bold"
+                           Margin="5"
+                           Text="Note">
+
+                        </TextBlock>
+
+
+                        <TextBox Height="35"
+                         FontSize="15"
+                         Margin="5 0 15 0"
+                         md:HintAssist.HintOpacity="0.5"
+                         md:TextFieldAssist.HasOutlinedTextField="True"
+                         md:TextFieldAssist.UnderlineBrush="Gray"
+                         md:TextFieldAssist.DecorationVisibility="Collapsed"
+                         md:TextFieldAssist.TextBoxViewMargin="5"
+                         md:HintAssist.HelperTextFontSize="10"
+                         />
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="3"
+                                Grid.Column="0">
+
+                        <TextBlock FontSize="20"
+                           FontWeight="Bold"
+                           Margin="5"
+                           Text="Invoice price">
+
+                        </TextBlock>
+
+
+                        <TextBox Height="35"
+                         FontSize="15"
+                         Margin="5 0 15 0"
                          md:HintAssist.HintOpacity="0.5"
                          md:TextFieldAssist.HasOutlinedTextField="True"
                          md:TextFieldAssist.UnderlineBrush="Gray"
@@ -162,7 +226,7 @@
                         <TextBlock FontSize="20"
                            FontWeight="Bold"
                            Margin="5"
-                           Text="Price (TL)">
+                           Text="Product category">
 
                         </TextBlock>
 
@@ -170,7 +234,7 @@
                         <TextBox Height="35"
                          FontSize="15"
                          Margin="5 0 15 0"
-                         md:HintAssist.Hint="ex: 100"
+                         md:HintAssist.Hint="ex: clothes"
                          md:HintAssist.HintOpacity="0.5"
                          md:TextFieldAssist.HasOutlinedTextField="True"
                          md:TextFieldAssist.UnderlineBrush="Gray"
@@ -182,14 +246,13 @@
 
                     </StackPanel>
 
-
-                    <StackPanel Grid.Row="1"
-                                Grid.Column="2">
+                    <StackPanel Grid.Row="3"
+                                Grid.Column="1">
 
                         <TextBlock FontSize="20"
                            FontWeight="Bold"
                            Margin="5"
-                           Text="Shop delivery price (TL)">
+                           Text="Currency">
 
                         </TextBlock>
 
@@ -197,7 +260,7 @@
                         <TextBox Height="35"
                          FontSize="15"
                          Margin="5 0 15 0"
-                         md:HintAssist.Hint="0"
+                         md:HintAssist.Hint="ex: TRY"
                          md:HintAssist.HintOpacity="0.5"
                          md:TextFieldAssist.HasOutlinedTextField="True"
                          md:TextFieldAssist.UnderlineBrush="Gray"
@@ -208,6 +271,52 @@
                          />
 
                     </StackPanel>
+
+                    <StackPanel Grid.Row="4"
+                                Grid.Column="0">
+
+                        <TextBlock FontSize="20"
+                           FontWeight="Bold"
+                           Margin="5"
+                           Text="Invoice">
+
+                        </TextBlock>
+
+
+                        <Grid>
+                        
+                         <TextBox Height="35"
+                         FontSize="15"
+                         Margin="5 0 15 0"
+                         md:TextFieldAssist.HasOutlinedTextField="True"
+                         md:TextFieldAssist.UnderlineBrush="Gray"
+                         md:TextFieldAssist.DecorationVisibility="Collapsed"
+                         md:HintAssist.HelperText="required field"
+                         IsReadOnly="true"
+
+                         />
+                         
+                        <Button Width="120" Height="30" HorizontalAlignment="left" Margin="20,0,5,0"
+                                 Style="{DynamicResource MaterialDesignFlatSecondaryLightBgButton}"
+                                 Background="Gainsboro"
+                                 Foreground="Black"
+                                 Content="Choose file"
+                                 FontSize="15"/>
+                        </Grid>
+
+
+                    </StackPanel>
+
+                    <Button Grid.Row="4"
+                             Grid.Column="1"
+                            Height="50"
+                        Width="200"
+                        Margin="10" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
+                        Background="MediumSeaGreen"
+                        Foreground="AliceBlue"
+                        Content="Confirm"
+                        FontSize="30"
+                        VerticalAlignment="Center"/>
 
 
 

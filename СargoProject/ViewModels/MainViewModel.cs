@@ -20,6 +20,6 @@ class MainViewModel : ViewModelBase
 
     public MainViewModel()
     {
-        CurrentView = App.Container.GetInstance<PlaceOrderViewModel>();
+        CurrentView = App.Container.GetInstance<DeclareViewModel>();
     }
 }

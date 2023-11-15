@@ -20,6 +20,6 @@ class MainViewModel : ViewModelBase
 
     public MainViewModel()
     {
-        CurrentView = App.Container.GetInstance<DeclareViewModel>();
+        CurrentView = App.Container.GetInstance<SignUpViewModel>();
     }
 }

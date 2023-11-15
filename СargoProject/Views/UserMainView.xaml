@@ -113,15 +113,6 @@
                         Margin="5" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
                         Background="LightSlateGray"
                         Foreground="AliceBlue"
-                        Content="Shipped"
-                        FontSize="20">
-
-            </Button>
-            <Button Height="50"
-                        Width="130"
-                        Margin="5" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
-                        Background="LightSlateGray"
-                        Foreground="AliceBlue"
                         Content="In Filial"
                         FontSize="20">
 

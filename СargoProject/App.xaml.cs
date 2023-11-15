@@ -7,6 +7,8 @@ using System.Linq;
 using System.Net.NetworkInformation;
 using System.Threading.Tasks;
 using System.Windows;
+using СargoProject.Services.Clsasses;
+using СargoProject.Services.Interfaces;
 using СargoProject.ViewModels;
 using СargoProject.Views;
 
@@ -22,6 +24,8 @@ namespace СargoProject
         void Register()
         {
             Container = new();
+
+            Container.RegisterSingleton<ICipherService, CipherService>();
 
             Container.RegisterSingleton<MainViewModel>();
             Container.RegisterSingleton<DeclareViewModel>();

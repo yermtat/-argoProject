@@ -14,9 +14,4 @@
     <PackageReference Include="SimpleInjector" Version="5.4.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Services\" />
-  </ItemGroup>
-
 </Project>

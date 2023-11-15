@@ -30,6 +30,7 @@
                          Width="450"
                          Margin="25"
                          FontSize="35"
+                         Text="{Binding User.Username, UpdateSourceTrigger=PropertyChanged}"
                          Style="{DynamicResource  MaterialDesignFloatingHintTextBox}"
                          md:HintAssist.Hint="Username"
                          md:HintAssist.HintOpacity="0.5"
@@ -40,6 +41,7 @@
                          Width="450"
                          Margin="25"
                          FontSize="35"
+                         Text="{Binding User.Password,UpdateSourceTrigger=PropertyChanged}"
                          Style="{DynamicResource  MaterialDesignFloatingHintTextBox}"
                          md:HintAssist.Hint="Password"
                          md:HintAssist.HintOpacity="0.5"
@@ -70,7 +72,8 @@
                         Background="MediumSeaGreen"
                         Foreground="AliceBlue"
                         Content="Log in"
-                        FontSize="30">
+                        FontSize="30"
+                        Command="{Binding LoginCommand}">
 
                 </Button>
 

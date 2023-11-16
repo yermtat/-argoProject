@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace СargoProject.Models;
-
-class OrderModel : IData
+namespace СargoProject.Messages
 {
+    internal class DataMessage
+    {
+    }
 }

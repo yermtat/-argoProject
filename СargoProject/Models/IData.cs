@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace СargoProject.Models;
 
-class OrderModel : IData
+interface IData
 {
+
 }

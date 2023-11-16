@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace СargoProject.Models;
 
-class LoginInfoModel
+class LoginInfoModel : IData
 {
     public string Username { get; set; }
     public string Password { get; set; }

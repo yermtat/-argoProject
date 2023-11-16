@@ -12,7 +12,7 @@ namespace СargoProject.ViewModels;
 
 class SignUpViewModel : ViewModelBase
 {
-    private ICipherService _cipherService;
+    private readonly ICipherService _cipherService;
     public UserModel User { get; set; } = new();
     public string PasswordConfirmation { get; set; } 
     public SignUpViewModel(ICipherService cipherService)

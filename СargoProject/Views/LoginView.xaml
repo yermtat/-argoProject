@@ -83,7 +83,8 @@
                         Background="MediumSeaGreen"
                         Foreground="AliceBlue"
                         Content="Sign up"
-                        FontSize="30">
+                        FontSize="30"
+                        Command="{Binding SignupCommand}">
 
                 </Button>
 

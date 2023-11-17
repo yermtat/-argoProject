@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using СargoProject.Models;
 using СargoProject.Services.Clsasses;
 using СargoProject.Services.Interfaces;
@@ -13,14 +14,20 @@ namespace СargoProject.ViewModels;
 
 class LoginViewModel : ViewModelBase
 {
-    private ICipherService _cipherService;
+    private readonly INavigationService _navigationService;
+    private readonly IDataService _dataService;
+    private readonly IUserManagerService _userManagerService;
+
+
     private LoginInfoModel user = new();
 
     public LoginInfoModel User { get => user; set => Set(ref user, value); }
 
-    public LoginViewModel(ICipherService cipherService)
+    public LoginViewModel(INavigationService navigationService, IUserManagerService userManagerService, IDataService dataService = null)
     {
-        _cipherService = cipherService;
+        _navigationService = navigationService;
+        _userManagerService = userManagerService;
+        _dataService = dataService;
     }
 
     public MyRelayCommand LoginCommand
@@ -28,7 +35,17 @@ class LoginViewModel : ViewModelBase
         get => new(
         () =>
         {
-            var str = _cipherService.Encipher(User.Password); 
+            try
+            {
+                var data = _userManagerService.LoadUser(User);
+                _dataService.SendData(data);
+                _navigationService.NavigateTo<UserMainViewModel>();
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Wrong username or password");
+            }
         },
         () =>
         {
@@ -36,5 +53,14 @@ class LoginViewModel : ViewModelBase
         }
         );
 
+    }
+
+    public MyRelayCommand SignupCommand
+    {
+        get => new(
+            () =>
+            {
+                _navigationService.NavigateTo<SignUpViewModel>();
+            });
     }
 }

@@ -12,17 +12,24 @@ namespace СargoProject.ViewModels;
 
 class SignUpViewModel : ViewModelBase
 {
-    private readonly ICipherService _cipherService;
+    private readonly IUserManagerService _userManagerService;
+    private readonly INavigationService _navigationService;
+
+    public SignUpViewModel(IUserManagerService userManagerService, INavigationService navigationService)
+    {
+        _userManagerService = userManagerService;
+        _navigationService = navigationService;
+    }
+
     public UserModel User { get; set; } = new();
     public string PasswordConfirmation { get; set; } 
-    public SignUpViewModel(ICipherService cipherService)
-    {
-        _cipherService = cipherService;
-    }
 
     public MyRelayCommand ConfirmButton { get => new(
         () =>
         {
+            _userManagerService.CreateNewUser(User);
+            PasswordConfirmation = null;
+            _navigationService.NavigateTo<LoginViewModel>();
 
         },
         () =>

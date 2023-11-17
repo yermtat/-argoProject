@@ -7,9 +7,10 @@ using СargoProject.Models;
 
 namespace СargoProject.Services.Interfaces;
 
-interface IJsonService
+interface IUserManagerService
 {
-    public string Serialize(UserModel user);
+    public void CreateNewUser(UserModel user);
+    public void UpdateUser(UserModel user);
 
-    public UserModel Deserialize<UserModel>(string json);
+    public UserModel LoadUser(LoginInfoModel user);
 }

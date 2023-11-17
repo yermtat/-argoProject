@@ -1,4 +1,5 @@
-﻿using SimpleInjector;
+﻿using GalaSoft.MvvmLight.Messaging;
+using SimpleInjector;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -26,6 +27,13 @@ namespace СargoProject
             Container = new();
 
             Container.RegisterSingleton<ICipherService, CipherService>();
+            Container.RegisterSingleton<IJsonService, JsonService>();
+            Container.RegisterSingleton<IFileOperationService, FileOperationService>();
+            Container.RegisterSingleton<IUserManagerService, UserManagerService>();
+
+            Container.RegisterSingleton<IMessenger, Messenger>();
+            Container.RegisterSingleton<INavigationService, NavigationService>();
+            Container.RegisterSingleton<IDataService, DataService>();
 
             Container.RegisterSingleton<MainViewModel>();
             Container.RegisterSingleton<DeclareViewModel>();

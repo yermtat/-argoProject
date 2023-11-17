@@ -23,7 +23,6 @@ namespace СargoProject.Views
         public MainView()
         {
             InitializeComponent();
-            DataContext = new MainViewModel();
         }
     }
 }

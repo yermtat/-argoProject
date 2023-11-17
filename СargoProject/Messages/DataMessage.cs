@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using СargoProject.Models;
 
-namespace СargoProject.Messages
+namespace СargoProject.Messages;
+
+class DataMessage
 {
-    internal class DataMessage
-    {
-    }
+    public IData Data { get; set; }
+
 }

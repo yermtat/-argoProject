@@ -220,32 +220,6 @@
 
                     </StackPanel>
 
-                    <StackPanel Grid.Row="1"
-                                Grid.Column="1">
-
-                        <TextBlock FontSize="20"
-                           FontWeight="Bold"
-                           Margin="5"
-                           Text="Product category">
-
-                        </TextBlock>
-
-
-                        <TextBox Height="35"
-                         FontSize="15"
-                         Margin="5 0 15 0"
-                         md:HintAssist.Hint="ex: clothes"
-                         md:HintAssist.HintOpacity="0.5"
-                         md:TextFieldAssist.HasOutlinedTextField="True"
-                         md:TextFieldAssist.UnderlineBrush="Gray"
-                         md:TextFieldAssist.DecorationVisibility="Collapsed"
-                         md:TextFieldAssist.TextBoxViewMargin="5"
-                         md:HintAssist.HelperTextFontSize="10"
-                         md:HintAssist.HelperText="required field"
-                         />
-
-                    </StackPanel>
-
                     <StackPanel Grid.Row="3"
                                 Grid.Column="1">
 

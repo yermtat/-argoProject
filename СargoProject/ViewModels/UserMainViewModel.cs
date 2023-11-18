@@ -44,12 +44,30 @@ class UserMainViewModel : ViewModelBase
                 _userManagerService.UpdateUser(User);
             }
         });
+
+        _messenger.Register<DataMessage<UserInformationModel>>(this, message =>
+        {
+            if (message.Data != null)
+            {
+                User.Info = message.Data;
+                _userManagerService.UpdateUser(User);
+            }
+        });
     }
 
     public MyRelayCommand PlaceOrderCommand { get => new(
         () =>
         {
             _navigationService.NavigateTo<PlaceOrderViewModel>();
+        });
+    }
+
+    public MyRelayCommand UserSettingsButton {
+        get => new(
+        () =>
+        {
+            _dataService.SendData(User.Info);
+            _navigationService.NavigateTo<UserSettingsViewModel>();
         });
     }
 }

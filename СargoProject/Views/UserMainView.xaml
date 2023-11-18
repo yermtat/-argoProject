@@ -23,7 +23,8 @@
                         Background="MediumSeaGreen"
                         Foreground="AliceBlue"
                         Content="User Settings"
-                        FontSize="25">
+                        FontSize="25"
+                        Command="{Binding UserSettingsButton}">
 
             </Button>
             <Button Height="50"

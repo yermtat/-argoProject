@@ -5,8 +5,295 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:СargoProject.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="768" d:DesignWidth="1024">
+
     <Grid>
-            
+        <Grid
+              HorizontalAlignment="Center"
+              VerticalAlignment="center"
+              Height="600"
+              Width="900">
+
+            <Border Background="white"
+                    CornerRadius="20"
+                    Style="{DynamicResource MaterialDesignToolBarMainPanelBorderStyle}"/>
+
+            <StackPanel>
+
+                <TextBlock FontSize="20"
+                           FontWeight="Bold"
+                           Margin="5">
+                    Personal Information
+                </TextBlock>
+
+
+                <Grid Margin="0 20 0 0" Height="544">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0"
+                                Grid.Column="0">
+
+                        <TextBlock FontSize="20"
+                           FontWeight="Bold"
+                           Margin="5"
+                           Text="Name">
+
+                        </TextBlock>
+
+
+                        <TextBox Height="35"
+                         FontSize="15"
+                         Margin="5 0 15 0"
+                         md:HintAssist.HintOpacity="0.5"
+                         md:TextFieldAssist.HasOutlinedTextField="True"
+                         md:TextFieldAssist.UnderlineBrush="Gray"
+                         md:TextFieldAssist.DecorationVisibility="Collapsed"
+                         md:TextFieldAssist.TextBoxViewMargin="5"
+                         md:HintAssist.HelperTextFontSize="10"
+                         md:HintAssist.HelperText="required field"
+                         Text="{Binding UserInfo.Name,UpdateSourceTrigger=PropertyChanged}"/>
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="0"
+                                Grid.Column="1">
+
+                        <TextBlock FontSize="20"
+                           FontWeight="Bold"
+                           Margin="5"
+                           Text="Surname">
+
+                        </TextBlock>
+
+
+                        <TextBox Height="35"
+                         FontSize="15"
+                         Margin="5 0 15 0"
+                         md:HintAssist.HintOpacity="0.5"
+                         md:TextFieldAssist.HasOutlinedTextField="True"
+                         md:TextFieldAssist.UnderlineBrush="Gray"
+                         md:TextFieldAssist.DecorationVisibility="Collapsed"
+                         md:TextFieldAssist.TextBoxViewMargin="5"
+                         md:HintAssist.HelperTextFontSize="10"
+                         md:HintAssist.HelperText="required field"
+                         Text="{Binding UserInfo.Surname,UpdateSourceTrigger=PropertyChanged}"/>
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1"
+                                Grid.Column="0">
+
+                        <TextBlock FontSize="20"
+                           FontWeight="Bold"
+                           Margin="5"
+                           Text="Serial">
+
+                        </TextBlock>
+
+
+                        <TextBox Height="35"
+                         FontSize="15"
+                         Margin="5 0 15 0"
+                         md:HintAssist.HintOpacity="0.5"
+                         md:TextFieldAssist.HasOutlinedTextField="True"
+                         md:TextFieldAssist.UnderlineBrush="Gray"
+                         md:TextFieldAssist.DecorationVisibility="Collapsed"
+                         md:TextFieldAssist.TextBoxViewMargin="5"
+                         md:HintAssist.HelperTextFontSize="10"
+                         md:HintAssist.HelperText="required field"
+                         Text="{Binding UserInfo.PassportSerial,UpdateSourceTrigger=PropertyChanged}"/>
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1"
+                                Grid.Column="1">
+
+                        <TextBlock FontSize="20"
+                           FontWeight="Bold"
+                           Margin="5"
+                           Text="FIN">
+
+                        </TextBlock>
+
+
+                        <TextBox Height="35"
+                         FontSize="15"
+                         Margin="5 0 15 0"
+                         md:HintAssist.HintOpacity="0.5"
+                         md:TextFieldAssist.HasOutlinedTextField="True"
+                         md:TextFieldAssist.UnderlineBrush="Gray"
+                         md:TextFieldAssist.DecorationVisibility="Collapsed"
+                         md:TextFieldAssist.TextBoxViewMargin="5"
+                         md:HintAssist.HelperTextFontSize="10"
+                         md:HintAssist.HelperText="required field"
+                         Text="{Binding UserInfo.Fin,UpdateSourceTrigger=PropertyChanged}"/>
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="2"
+                                Grid.Column="0">
+
+                        <TextBlock FontSize="20"
+                           FontWeight="Bold"
+                           Margin="5"
+                           Text="E-mail">
+
+                        </TextBlock>
+
+
+                        <TextBox Height="35"
+                         FontSize="15"
+                         Margin="5 0 15 0"
+                         md:HintAssist.HintOpacity="0.5"
+                         md:TextFieldAssist.HasOutlinedTextField="True"
+                         md:TextFieldAssist.UnderlineBrush="Gray"
+                         md:TextFieldAssist.DecorationVisibility="Collapsed"
+                         md:TextFieldAssist.TextBoxViewMargin="5"
+                         md:HintAssist.HelperTextFontSize="10"
+                         md:HintAssist.HelperText="required field"
+                         Text="{Binding UserInfo.Email,UpdateSourceTrigger=PropertyChanged}"/>
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="2"
+                                Grid.Column="1">
+
+                        <TextBlock FontSize="20"
+                           FontWeight="Bold"
+                           Margin="5"
+                           Text="Phone number">
+
+                        </TextBlock>
+
+
+                        <TextBox Height="35"
+                         FontSize="15"
+                         Margin="5 0 15 0"
+                         md:HintAssist.HintOpacity="0.5"
+                         md:TextFieldAssist.HasOutlinedTextField="True"
+                         md:TextFieldAssist.UnderlineBrush="Gray"
+                         md:TextFieldAssist.DecorationVisibility="Collapsed"
+                         md:TextFieldAssist.TextBoxViewMargin="5"
+                         md:HintAssist.HelperTextFontSize="10"
+                         md:HintAssist.HelperText="required field"                                
+                         Text="{Binding UserInfo.PhoneNumber,UpdateSourceTrigger=PropertyChanged}"/>
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="3"
+                                Grid.Column="0">
+
+                        <TextBlock FontSize="20"
+                           FontWeight="Bold"
+                           Margin="5"
+                           Text="Postal Code">
+
+                        </TextBlock>
+
+
+                        <TextBox Height="35"
+                         FontSize="15"
+                         Margin="5 0 15 0"
+                         md:HintAssist.HintOpacity="0.5"
+                         md:TextFieldAssist.HasOutlinedTextField="True"
+                         md:TextFieldAssist.UnderlineBrush="Gray"
+                         md:TextFieldAssist.DecorationVisibility="Collapsed"
+                         md:TextFieldAssist.TextBoxViewMargin="5"
+                         md:HintAssist.HelperTextFontSize="10"
+                         md:HintAssist.HelperText="required field"
+                         Text="{Binding UserInfo.PostalCode,UpdateSourceTrigger=PropertyChanged}"/>
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="3"
+                                Grid.Column="1">
+
+                        <TextBlock FontSize="20"
+                           FontWeight="Bold"
+                           Margin="5"
+                           Text="City">
+
+                        </TextBlock>
+
+
+                        <TextBox Height="35"
+                         FontSize="15"
+                         Margin="5 0 15 0"
+                         md:HintAssist.HintOpacity="0.5"
+                         md:TextFieldAssist.HasOutlinedTextField="True"
+                         md:TextFieldAssist.UnderlineBrush="Gray"
+                         md:TextFieldAssist.DecorationVisibility="Collapsed"
+                         md:TextFieldAssist.TextBoxViewMargin="5"
+                         md:HintAssist.HelperTextFontSize="10"
+                         md:HintAssist.HelperText="required field"
+                         Text="{Binding UserInfo.City,UpdateSourceTrigger=PropertyChanged}"/>
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="4"
+                                Grid.Column="0">
+
+                        <TextBlock FontSize="20"
+                           FontWeight="Bold"
+                           Margin="5"
+                           Text="District">
+
+                        </TextBlock>
+
+
+                        <TextBox Height="35"
+                         FontSize="15"
+                         Margin="5 0 15 0"
+                         md:HintAssist.HintOpacity="0.5"
+                         md:TextFieldAssist.HasOutlinedTextField="True"
+                         md:TextFieldAssist.UnderlineBrush="Gray"
+                         md:TextFieldAssist.DecorationVisibility="Collapsed"
+                         md:TextFieldAssist.TextBoxViewMargin="5"
+                         md:HintAssist.HelperTextFontSize="10"
+                         md:HintAssist.HelperText="required field"
+                         Text="{Binding UserInfo.District,UpdateSourceTrigger=PropertyChanged}"/>
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="3"
+                                Grid.Column="1" Margin="0,80,0,0" Grid.RowSpan="2">
+                        <Button Height="50"
+                        Width="200"
+                        Margin="10" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
+                        Background="MediumSeaGreen"
+                        Foreground="AliceBlue"
+                        Content="Confirm"
+                        FontSize="30"
+                        Command="{Binding ConfirmCommand}"/>
+
+                        <Button Height="50"
+                        Width="200"
+                        Margin="10" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
+                        Background="MediumSeaGreen"
+                        Foreground="AliceBlue"
+                        Content="Cancel"
+                        FontSize="30"
+                        Command="{Binding CancelCommand}"/>
+
+                    </StackPanel>
+
+                </Grid>
+
+            </StackPanel>
+
+        </Grid>
     </Grid>
 </UserControl>

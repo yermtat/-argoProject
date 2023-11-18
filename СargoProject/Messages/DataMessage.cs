@@ -7,8 +7,10 @@ using СargoProject.Models;
 
 namespace СargoProject.Messages;
 
-class DataMessage
+class DataMessage<T>
 {
-    public IData Data { get; set; }
+    //public IData Data { get; set; }
+
+    public T Data { get; set; }
 
 }

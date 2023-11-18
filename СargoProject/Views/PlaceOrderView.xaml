@@ -7,6 +7,7 @@
              mc:Ignorable="d" 
              xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
              d:DesignHeight="768" d:DesignWidth="1024">
+
     <Grid>
         
         <Grid
@@ -38,7 +39,7 @@
                          md:TextFieldAssist.DecorationVisibility="Collapsed"
                          md:TextFieldAssist.TextBoxViewMargin="5"
                          md:HintAssist.HelperTextFontSize="10"
-                         />
+                         Text="{Binding Order.Link}"/>
 
                 <Grid Margin="0 20 0 0" Height="312">
 
@@ -75,7 +76,7 @@
                          md:TextFieldAssist.TextBoxViewMargin="5"
                          md:HintAssist.HelperTextFontSize="10"
                          md:HintAssist.HelperText="required field"
-                         />
+                         Text="{Binding Order.Size}"/>
 
                     </StackPanel>
 
@@ -101,7 +102,7 @@
                          md:TextFieldAssist.TextBoxViewMargin="5"
                          md:HintAssist.HelperTextFontSize="10"
                          md:HintAssist.HelperText="required field"
-                         />
+                         Text="{Binding Order.Colour}"/>
 
                     </StackPanel>
 
@@ -126,7 +127,7 @@
                          md:TextFieldAssist.DecorationVisibility="Collapsed"
                          md:TextFieldAssist.TextBoxViewMargin="5"
                          md:HintAssist.HelperTextFontSize="10"
-                         />
+                         Text="{Binding Order.SpecialNotes}"/>
 
                     </StackPanel>
 
@@ -152,7 +153,7 @@
                          md:TextFieldAssist.TextBoxViewMargin="5"
                          md:HintAssist.HelperTextFontSize="10"
                          md:HintAssist.HelperText="required field"
-                         />
+                         Text="{Binding Order.Quantity}"/>
 
                     </StackPanel>
 
@@ -178,7 +179,7 @@
                          md:TextFieldAssist.TextBoxViewMargin="5"
                          md:HintAssist.HelperTextFontSize="10"
                          md:HintAssist.HelperText="required field"
-                         />
+                         Text="{Binding Order.Price}"/>
 
                     </StackPanel>
 
@@ -205,13 +206,42 @@
                          md:TextFieldAssist.TextBoxViewMargin="5"
                          md:HintAssist.HelperTextFontSize="10"
                          md:HintAssist.HelperText="required field"
-                         />
+                         Text="{Binding Order.DeliveryPrice}"/>
 
                     </StackPanel>
 
 
 
                 </Grid>
+
+                <Button Grid.Row="4"
+                             Grid.Column="0"
+                            Grid.ColumnSpan="2"
+                            Height="50"
+                        Width="200"
+                            Command="{Binding ConfirmButton}"
+                        Margin="10" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
+                        Background="MediumSeaGreen"
+                        Foreground="AliceBlue"
+                        Content="Confirm"
+                        FontSize="30"
+                         VerticalAlignment="Bottom">
+
+                </Button>
+                <Button Grid.Row="4"
+                             Grid.Column="0"
+                            Grid.ColumnSpan="2"
+                            Height="50"
+                        Width="200"
+                            Command="{Binding CancelButton}"
+                        Margin="10" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
+                        Background="MediumSeaGreen"
+                        Foreground="AliceBlue"
+                        Content="Cancel"
+                        FontSize="30"
+                         VerticalAlignment="Bottom">
+
+                </Button>
 
             </StackPanel>
 

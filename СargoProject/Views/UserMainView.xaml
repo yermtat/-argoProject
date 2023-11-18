@@ -32,7 +32,8 @@
                         Background="MediumSeaGreen"
                         Foreground="AliceBlue"
                         Content="Place Order"
-                        FontSize="25">
+                        FontSize="25"
+                        Command="{Binding PlaceOrderCommand}">
 
             </Button>
             <Button Height="50"

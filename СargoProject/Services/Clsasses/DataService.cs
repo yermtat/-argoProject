@@ -22,7 +22,7 @@ class DataService : IDataService
     public void SendData<T>(T data) where T : IData
     {
         if (data != null)
-            _messenger.Send(new DataMessage() { Data = data });
+            _messenger.Send(new DataMessage<T>() { Data = data });
         else
             throw new NullReferenceException("Data is null");
     }

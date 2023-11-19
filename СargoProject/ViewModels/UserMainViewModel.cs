@@ -3,6 +3,7 @@ using GalaSoft.MvvmLight.Messaging;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,7 @@ class UserMainViewModel : ViewModelBase
     private readonly IUserManagerService _userManagerService;
 
     public UserModel User { get; set; }
+    public ObservableCollection<OrderModel> SortedOrders{ get; set; }
     public UserMainViewModel(INavigationService navigationService, IDataService dataService, IMessenger messenger, IUserManagerService userManagerService)
     {
         _navigationService = navigationService;

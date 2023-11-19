@@ -16,4 +16,5 @@ class OrderModel : IData
     public int Price { get; set; }
     public int DeliveryPrice { get; set; }
 
+
 }

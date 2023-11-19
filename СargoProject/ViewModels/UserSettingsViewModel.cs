@@ -21,6 +21,7 @@ class UserSettingsViewModel : ViewModelBase
     private UserInformationModel userInfo = new();
 
     public UserInformationModel UserInfo { get => userInfo; set => Set(ref userInfo, value); }
+
     public UserSettingsViewModel(INavigationService navigationService, IDataService dataService, IMessenger messenger)
     {
         _navigationService = navigationService;
@@ -31,7 +32,7 @@ class UserSettingsViewModel : ViewModelBase
         {
             if (message.Data != null)
             {
-                UserInfo = message.Data;
+                UserInfo = new(message.Data);
             }
         });
     }
@@ -51,7 +52,6 @@ class UserSettingsViewModel : ViewModelBase
         get => new(
         () =>
         {
-            UserInfo = new();
             _navigationService.NavigateTo<UserMainViewModel>();
         });
     }

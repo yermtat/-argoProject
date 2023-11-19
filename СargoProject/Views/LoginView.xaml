@@ -61,8 +61,7 @@
                          md:HintAssist.Hint="Password"
                          md:HintAssist.HintOpacity="0.5"
                          md:HintAssist.Foreground="CadetBlue"
-                         md:TextFieldAssist.UnderlineBrush="Black"
-                         >--><!--
+                         md:TextFieldAssist.UnderlineBrush="Black">
                     
                 </PasswordBox>-->
 

@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using СargoProject.Messages;
 using СargoProject.Models;
 using СargoProject.Services.Clsasses;
@@ -22,8 +23,13 @@ class UserMainViewModel : ViewModelBase
     private readonly IUserManagerService _userManagerService;
     private ObservableCollection<OrderModel> sortedOrders;
 
-    public UserModel User { get; set; }
+
     public ObservableCollection<OrderModel> SortedOrders { get => sortedOrders; set => Set(ref sortedOrders, value); }
+
+    public OrderModel SelectedOrder { get; set; }
+    public UserModel User { get; set; }
+
+
     public UserMainViewModel(INavigationService navigationService, IDataService dataService, IMessenger messenger, IUserManagerService userManagerService)
     {
         _navigationService = navigationService;
@@ -56,6 +62,16 @@ class UserMainViewModel : ViewModelBase
                 _userManagerService.UpdateUser(User);
             }
         });
+
+        _messenger.Register<DataMessage<DeclarationModel>>(this, message =>
+        {
+            if (message.Data != null)
+            {
+                User.Declarations.Add(message.Data);
+                _userManagerService.UpdateUser(User);
+            }
+        });
+
     }
 
     public MyRelayCommand PlaceOrderCommand
@@ -64,6 +80,15 @@ class UserMainViewModel : ViewModelBase
         () =>
         {
             _navigationService.NavigateTo<PlaceOrderViewModel>();
+        });
+    }
+
+    public MyRelayCommand DeclareCommand
+    {
+        get => new(
+        () =>
+        {
+            _navigationService.NavigateTo<DeclareViewModel>();
         });
     }
 
@@ -130,5 +155,15 @@ class UserMainViewModel : ViewModelBase
             SortedOrders = new(User.Orders.Where(o => o.Status == OrderModel.DeliveryStatus.Finished));
         });
     }
+
+    public MyRelayCommand DetailsCommand
+    {
+        get => new(
+        () =>
+        {
+            MessageBox.Show($"{SelectedOrder.Quantity}");
+        });
+    }
+
 
 }

@@ -5,8 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:СargoProject.Views"
              mc:Ignorable="d" 
+             xmlns:viewModels="clr-namespace:СargoProject.ViewModels"
              xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
              d:DesignHeight="768" d:DesignWidth="1024">
+
     <Grid>
 
         <Grid
@@ -65,7 +67,7 @@
                          md:TextFieldAssist.TextBoxViewMargin="5"
                          md:HintAssist.HelperTextFontSize="10"
                          md:HintAssist.HelperText="required field"
-                         />
+                         Text="{Binding Declaration.Warehouse}"/>
 
                     </StackPanel>
 
@@ -91,7 +93,7 @@
                          md:TextFieldAssist.TextBoxViewMargin="5"
                          md:HintAssist.HelperTextFontSize="10"
                          md:HintAssist.HelperText="required field"
-                         />
+                         Text="{Binding Declaration.SiteName}"/>
 
                     </StackPanel>
 
@@ -116,7 +118,7 @@
                          md:TextFieldAssist.TextBoxViewMargin="5"
                          md:HintAssist.HelperTextFontSize="10"
                          md:HintAssist.HelperText="required field"
-                         />
+                         Text="{Binding Declaration.TrackingNumber}"/>
 
                     </StackPanel>
 
@@ -142,7 +144,7 @@
                          md:TextFieldAssist.TextBoxViewMargin="5"
                          md:HintAssist.HelperTextFontSize="10"
                          md:HintAssist.HelperText="required field"
-                         />
+                         Text="{Binding Declaration.ProductCategory}"/>
 
                     </StackPanel>
 
@@ -167,7 +169,7 @@
                          md:TextFieldAssist.TextBoxViewMargin="5"
                          md:HintAssist.HelperTextFontSize="10"
                          md:HintAssist.HelperText="required field"
-                         />
+                         Text="{Binding Declaration.Quantity}"/>
 
                     </StackPanel>
 
@@ -191,7 +193,7 @@
                          md:TextFieldAssist.DecorationVisibility="Collapsed"
                          md:TextFieldAssist.TextBoxViewMargin="5"
                          md:HintAssist.HelperTextFontSize="10"
-                         />
+                         Text="{Binding Declaration.Note}"/>
 
                     </StackPanel>
 
@@ -216,7 +218,7 @@
                          md:TextFieldAssist.TextBoxViewMargin="5"
                          md:HintAssist.HelperTextFontSize="10"
                          md:HintAssist.HelperText="required field"
-                         />
+                         Text="{Binding Declaration.InvoicePrice}"/>
 
                     </StackPanel>
 
@@ -242,7 +244,7 @@
                          md:TextFieldAssist.TextBoxViewMargin="5"
                          md:HintAssist.HelperTextFontSize="10"
                          md:HintAssist.HelperText="required field"
-                         />
+                         Text="{Binding Declaration.Currency}"/>
 
                     </StackPanel>
 
@@ -281,20 +283,31 @@
 
                     </StackPanel>
 
-                    <Button Grid.Row="4"
-                             Grid.Column="1"
-                            Height="50"
+                    <StackPanel Grid.Row="3"
+                                Grid.Column="1" Margin="0,80,0,0" Grid.RowSpan="2">
+                    <Button Height="50"
                         Width="200"
                         Margin="10" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
                         Background="MediumSeaGreen"
                         Foreground="AliceBlue"
                         Content="Confirm"
                         FontSize="30"
-                        VerticalAlignment="Center"/>
+                        Command="{Binding ConfirmCommand}"/>
+
+                    <Button Height="50"
+                        Width="200"
+                        Margin="10" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
+                        Background="MediumSeaGreen"
+                        Foreground="AliceBlue"
+                        Content="Cancel"
+                        FontSize="30"
+                        Command="{Binding CancelCommand}"/>
+
+            </StackPanel>
 
 
 
-                </Grid>
+        </Grid>
 
             </StackPanel>
 

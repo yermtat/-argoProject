@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:СargoProject.Views"
              mc:Ignorable="d" 
+             Name="MainUser"
              d:DesignHeight="768" d:DesignWidth="1024">
     <Grid>
 
@@ -43,7 +44,8 @@
                         Background="MediumSeaGreen"
                         Foreground="AliceBlue"
                         Content="Declare"
-                        FontSize="25">
+                        FontSize="25"
+                        Command="{Binding DeclareCommand}">
 
             </Button>
         </StackPanel>
@@ -155,7 +157,8 @@
                 Background="white"/>
 
             <ListBox ItemsSource="{Binding SortedOrders,UpdateSourceTrigger=PropertyChanged}"
-                     FontSize="18">
+                     FontSize="18"
+                     SelectedItem="{Binding SelectedOrder}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
@@ -173,9 +176,10 @@
                         Margin="5" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
                         Background="MediumSeaGreen"
                         Foreground="AliceBlue"
-                        Content="Declare"
+                        Content="Details"
                         FontSize="15"
-                        HorizontalAlignment="Left">
+                        HorizontalAlignment="Left"
+                        Command="{Binding ElementName=MainUser, Path=DataContext.DetailsCommand}">
 
                         </Button>
                             

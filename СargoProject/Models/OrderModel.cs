@@ -18,6 +18,9 @@ class OrderModel : IData
     public int DeliveryPrice { get; set; }
 
 
+
+
+
     public enum DeliveryStatus { New, Packed, Shipped, InFilial, OnCourier, Finished }
 
     public DeliveryStatus Status { get; set; }

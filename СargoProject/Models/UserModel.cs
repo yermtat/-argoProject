@@ -13,5 +13,6 @@ class UserModel : IData
     public string Password { get; set; }
     public UserInformationModel Info { get; set; } = new();
     public ObservableCollection<OrderModel> Orders { get; set; } = new();
+    public List<DeclarationModel> Declarations { get; set; } = new();
 }
 

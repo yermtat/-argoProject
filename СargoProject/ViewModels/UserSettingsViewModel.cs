@@ -18,7 +18,7 @@ class UserSettingsViewModel : ViewModelBase
     private readonly IDataService _dataService;
     private readonly IMessenger _messenger;
 
-    private UserInformationModel userInfo = new();
+    private UserInformationModel userInfo;
 
     public UserInformationModel UserInfo { get => userInfo; set => Set(ref userInfo, value); }
 

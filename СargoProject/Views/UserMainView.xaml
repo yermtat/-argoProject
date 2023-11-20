@@ -89,7 +89,8 @@
                         Background="LightSlateGray"
                         Foreground="AliceBlue"
                         Content="Packages"
-                        FontSize="20">
+                        FontSize="20"
+                        Command="{Binding PackagesCommand}">
 
             </Button>
             <Button Height="50"
@@ -98,7 +99,8 @@
                         Background="LightSlateGray"
                         Foreground="AliceBlue"
                         Content="Orders"
-                        FontSize="20">
+                        FontSize="20"
+                        Command="{Binding OrdersCommand}">
 
             </Button>
             <Button Height="50"
@@ -107,7 +109,8 @@
                         Background="LightSlateGray"
                         Foreground="AliceBlue"
                         Content="Shipped"
-                        FontSize="20">
+                        FontSize="20"
+                        Command="{Binding ShippedCommand}">
 
             </Button>
             <Button Height="50"
@@ -116,7 +119,8 @@
                         Background="LightSlateGray"
                         Foreground="AliceBlue"
                         Content="In Filial"
-                        FontSize="20">
+                        FontSize="20"
+                        Command="{Binding InFilialCommand}">
 
             </Button>
             <Button Height="50"
@@ -125,7 +129,8 @@
                         Background="LightSlateGray"
                         Foreground="AliceBlue"
                         Content="On Courier"
-                        FontSize="20">
+                        FontSize="20"
+                        Command="{Binding OnCourierCommand}">
 
             </Button>
             <Button Height="50"
@@ -134,14 +139,51 @@
                         Background="LightSlateGray"
                         Foreground="AliceBlue"
                         Content="History"
-                        FontSize="20">
+                        FontSize="20"
+                        Command="{Binding HistoryCommand}">
 
             </Button>
         </StackPanel>
 
-        <ListBox Grid.Row="3">
-            
-        </ListBox>
+        <Grid Grid.Row="3"
+              Margin="10">
+
+            <Border
+                    Opacity="0.6"
+                    CornerRadius="20"
+                    Style="{DynamicResource MaterialDesignToolBarMainPanelBorderStyle}" 
+                Background="white"/>
+
+            <ListBox ItemsSource="{Binding SortedOrders,UpdateSourceTrigger=PropertyChanged}"
+                     FontSize="18">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock>
+                            <TextBlock.Text>
+                                <MultiBinding StringFormat=" {0} - {1}">
+                                    <Binding Path="Link"/>
+                                    <Binding Path="Size"/>
+                                </MultiBinding>
+                            </TextBlock.Text>
+                            </TextBlock>
+                            
+                        <Button Height="25"
+                        Width="100"
+                        Margin="5" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
+                        Background="MediumSeaGreen"
+                        Foreground="AliceBlue"
+                        Content="Declare"
+                        FontSize="15"
+                        HorizontalAlignment="Left">
+
+                        </Button>
+                            
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
 
     </Grid>
 </UserControl>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,6 +16,11 @@ class OrderModel : IData
     public int Quantity { get; set; }
     public int Price { get; set; }
     public int DeliveryPrice { get; set; }
+
+
+    public enum DeliveryStatus { New, Packed, Shipped, InFilial, OnCourier, Finished }
+
+    public DeliveryStatus Status { get; set; }
 
 
 }

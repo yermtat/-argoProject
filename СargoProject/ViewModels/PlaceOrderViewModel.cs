@@ -32,6 +32,7 @@ class PlaceOrderViewModel : ViewModelBase
         () =>
         {
             Order.Status = OrderModel.DeliveryStatus.New;
+            Order.Date = DateTime.Now;
             _dataService.SendData(Order);
             Order = new();
             _navigationService.NavigateTo<UserMainViewModel>();

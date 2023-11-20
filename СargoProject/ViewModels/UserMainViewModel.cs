@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Messaging;
+using MaterialDesignThemes.Wpf.Converters;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -161,7 +162,48 @@ class UserMainViewModel : ViewModelBase
         get => new(
         () =>
         {
-            MessageBox.Show($"{SelectedOrder.Quantity}");
+            MessageBox.Show($"Size: {SelectedOrder.Size}\nColour: {SelectedOrder.Colour}\n" +
+                $"Quantity: {SelectedOrder.Quantity}\nPrice: {SelectedOrder.Price}\n" +
+                $"Delivery price: {SelectedOrder.DeliveryPrice}\nSpecial notes: {SelectedOrder.SpecialNotes}", "Order details",
+                MessageBoxButton.OK, MessageBoxImage.Information);
+        });
+    }
+
+    public MyRelayCommand LastMonthCommand
+    {
+        get => new(
+        () =>
+        {
+            MessageBox.Show($"Money spent: {User.Orders.Where(d => d.Date.Month == DateTime.Now.Month).Sum(d => d.Price + d.DeliveryPrice)}",
+               "Month spending", MessageBoxButton.OK, MessageBoxImage.Information);
+        });
+    }
+
+    public MyRelayCommand CashbackCommand
+    {
+        get => new(
+        () =>
+        {
+            MessageBox.Show($"This month cashback: {User.Orders.Where(d => d.Date.Month == DateTime.Now.Month).Sum(d => (d.Price + d.DeliveryPrice)*10/100)}",
+               "Cashback 10%", MessageBoxButton.OK, MessageBoxImage.Information);
+        });
+    }
+
+    public MyRelayCommand BalanceCommand
+    {
+        get => new(
+        () =>
+        {
+            MessageBox.Show($"Feature in development", "Balance", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+        });
+    }
+
+    public MyRelayCommand DiscountCommand
+    {
+        get => new(
+        () =>
+        {
+            MessageBox.Show($"No available discount at the moment", "Discount", MessageBoxButton.OK, MessageBoxImage.Exclamation);
         });
     }
 

@@ -24,7 +24,7 @@ class SignUpViewModel : ViewModelBase
     public UserModel User { get; set; } = new();
     public string PasswordConfirmation { get; set; } 
 
-    public MyRelayCommand ConfirmButton { get => new(
+    public MyRelayCommand ConfirmCommand { get => new(
         () =>
         {
             _userManagerService.CreateNewUser(User);
@@ -37,11 +37,22 @@ class SignUpViewModel : ViewModelBase
             return !String.IsNullOrEmpty(User.Username) &&
             !String.IsNullOrEmpty(User.Password) &&
             !String.IsNullOrEmpty(PasswordConfirmation) &&
-            !String.IsNullOrEmpty(User.Info.PhoneNumber) &&
+            User.Info.PhoneNumber != 0 &&
             !String.IsNullOrEmpty(User.Info.PassportSerial) &&
-            !String.IsNullOrEmpty(User.Info.Fin) &&
+            !String.IsNullOrEmpty(User.Info.Fin) && User.Info.Fin.Length == 6 &&
             !String.IsNullOrEmpty(User.Info.Address) &&
             User.Password == PasswordConfirmation;
         });
+    }
+
+    public MyRelayCommand CancelCommand
+    {
+        get => new(
+    () =>
+    {
+        User = new();
+        PasswordConfirmation = null;
+        _navigationService.NavigateTo<LoginViewModel>();
+    });
     }
 }

@@ -12,14 +12,14 @@ using СargoProject.Services.Interfaces;
 
 namespace СargoProject.ViewModels;
 
- class DeclareViewModel: ViewModelBase
+class DeclareViewModel : ViewModelBase
 {
     private readonly INavigationService _navigationService;
     private readonly IDataService _dataService;
     private readonly IMessenger _messenger;
+    private DeclarationModel declaration = new();
 
-    public DeclarationModel Declaration { get; set; } = new();
-
+    public DeclarationModel Declaration { get => declaration; set => Set(ref declaration, value); }
     public DeclareViewModel(INavigationService navigationService, IDataService dataService, IMessenger messenger)
     {
         _navigationService = navigationService;
@@ -38,7 +38,13 @@ namespace СargoProject.ViewModels;
         },
         () =>
         {
-            return true;
+            return !String.IsNullOrEmpty(Declaration.Warehouse) &&
+            !String.IsNullOrEmpty(Declaration.SiteName) &&
+            !String.IsNullOrEmpty(Declaration.TrackingNumber) &&
+            !String.IsNullOrEmpty(Declaration.ProductCategory) &&
+            Declaration.Quantity != 0 && Declaration.InvoicePrice != 0 &&
+            !String.IsNullOrEmpty(Declaration.Currency) &&
+            !String.IsNullOrEmpty(Declaration.InvoicePath);
 
         });
     }
@@ -49,6 +55,21 @@ namespace СargoProject.ViewModels;
         () =>
         {
             _navigationService.NavigateTo<UserMainViewModel>();
+        });
+    }
+
+    public MyRelayCommand ChooseFileButton
+    {
+        get => new(
+        () =>
+        {
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            dlg.Filter = "pdf documents (.pdf)|*.pdf";
+
+            if (dlg.ShowDialog() == true)
+            {
+                Declaration.InvoicePath = dlg.FileName;
+            }
         });
     }
 

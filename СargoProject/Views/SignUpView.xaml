@@ -73,12 +73,14 @@
                          Width="350"
                          Margin="10"
                          FontSize="25"
+                         FontFamily="Segoe MDL2 Assets"   
                          Text="{Binding User.Password}"
                          Style="{DynamicResource  MaterialDesignFloatingHintTextBox}"
                          md:HintAssist.Hint="Password"
                          md:HintAssist.HintOpacity="0.5"
                          md:HintAssist.Foreground="CadetBlue"
-                         md:TextFieldAssist.UnderlineBrush="Black"                         >
+                         md:TextFieldAssist.UnderlineBrush="Black"  
+                         md:HintAssist.FontFamily="Segoe UI">
                     </TextBox>
 
                     <TextBox Grid.Row="1"
@@ -86,9 +88,12 @@
                          Width="350"
                          Margin="10"
                          FontSize="25"
+                         FontFamily="Segoe MDL2 Assets"
                          Text="{Binding PasswordConfirmation}"
                          Style="{DynamicResource  MaterialDesignFloatingHintTextBox}"
                          md:HintAssist.Hint="Confirm password"
+                         md:HintAssist.FontFamily="Segoe UI"
+                             
                          md:HintAssist.HintOpacity="0.5"
                          md:HintAssist.Foreground="CadetBlue"
                          md:TextFieldAssist.UnderlineBrush="Black"                         >
@@ -133,20 +138,30 @@
                          md:TextFieldAssist.UnderlineBrush="Black">
                     </TextBox>
 
-                    <Button Grid.Row="4"
+                    <StackPanel Grid.Row="4"
                              Grid.Column="0"
                             Grid.ColumnSpan="2"
-                            Height="50"
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Center">
+                        <Button Height="50"
                         Width="200"
-                            Command="{Binding ConfirmButton}"
                         Margin="10" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
                         Background="MediumSeaGreen"
                         Foreground="AliceBlue"
                         Content="Confirm"
                         FontSize="30"
-                         VerticalAlignment="Bottom">
+                        Command="{Binding ConfirmCommand}"/>
 
-                    </Button>
+                        <Button Height="50"
+                        Width="200"
+                        Margin="10" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
+                        Background="MediumSeaGreen"
+                        Foreground="AliceBlue"
+                        Content="Cancel"
+                        FontSize="30"
+                        Command="{Binding CancelCommand}"/>
+
+                    </StackPanel>
 
 
                 </Grid>

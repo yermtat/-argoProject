@@ -16,8 +16,7 @@ class OrderModel : IData
     public int Quantity { get; set; }
     public int Price { get; set; }
     public int DeliveryPrice { get; set; }
-
-
+    public DateTime Date { get; set; }
 
 
 

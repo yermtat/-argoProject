@@ -56,28 +56,32 @@
                         Width="200"
                         Margin="10" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
                         Content="Discount"
-                        FontSize="25">
+                        FontSize="25"
+                        Command="{Binding DiscountCommand}">
 
             </Button>
             <Button Height="100"
                         Width="200"
                         Margin="10" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
                         Content="Balance"
-                        FontSize="25">
+                        FontSize="25"
+                        Command="{Binding BalanceCommand}">
 
             </Button>
             <Button Height="100"
                         Width="200"
                         Margin="10" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
                         Content="Cashback"
-                        FontSize="25">
+                        FontSize="25"
+                        Command="{Binding CashbackCommand}">
 
             </Button>
             <Button Height="100"
                         Width="200"
                         Margin="10" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
-                        Content="Last 30 day"
-                        FontSize="25">
+                        Content="Last month"
+                        FontSize="25"
+                        Command="{Binding LastMonthCommand}">
 
             </Button>
 
@@ -164,10 +168,12 @@
                         <StackPanel>
                             <TextBlock>
                             <TextBlock.Text>
-                                <MultiBinding StringFormat=" {0} - {1}">
-                                    <Binding Path="Link"/>
-                                    <Binding Path="Size"/>
-                                </MultiBinding>
+                                <MultiBinding StringFormat=" {0}.{1}.{2} - {3}">
+                                        <Binding Path="Date.Year"/>
+                                        <Binding Path="Date.Month"/>
+                                        <Binding Path="Date.Day"/>
+                                        <Binding Path="Link"/>
+                                    </MultiBinding>
                             </TextBlock.Text>
                             </TextBlock>
                             

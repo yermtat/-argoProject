@@ -163,7 +163,7 @@
                         <TextBlock FontSize="20"
                            FontWeight="Bold"
                            Margin="5"
-                           Text="Price (TL)">
+                           Text="Price">
 
                         </TextBlock>
 
@@ -190,7 +190,7 @@
                         <TextBlock FontSize="20"
                            FontWeight="Bold"
                            Margin="5"
-                           Text="Shop delivery price (TL)">
+                           Text="Shop delivery price">
 
                         </TextBlock>
 

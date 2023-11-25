@@ -17,14 +17,16 @@ class DeclareViewModel : ViewModelBase
     private readonly INavigationService _navigationService;
     private readonly IDataService _dataService;
     private readonly IMessenger _messenger;
+    private readonly INullCheckService _nullCheckService;
     private DeclarationModel declaration = new();
 
     public DeclarationModel Declaration { get => declaration; set => Set(ref declaration, value); }
-    public DeclareViewModel(INavigationService navigationService, IDataService dataService, IMessenger messenger)
+    public DeclareViewModel(INavigationService navigationService, IDataService dataService, IMessenger messenger, INullCheckService nullCheckService)
     {
         _navigationService = navigationService;
         _dataService = dataService;
         _messenger = messenger;
+        _nullCheckService = nullCheckService;
     }
 
     public MyRelayCommand ConfirmCommand
@@ -38,13 +40,7 @@ class DeclareViewModel : ViewModelBase
         },
         () =>
         {
-            return !String.IsNullOrEmpty(Declaration.Warehouse) &&
-            !String.IsNullOrEmpty(Declaration.SiteName) &&
-            !String.IsNullOrEmpty(Declaration.TrackingNumber) &&
-            !String.IsNullOrEmpty(Declaration.ProductCategory) &&
-            Declaration.Quantity != 0 && Declaration.InvoicePrice != 0 &&
-            !String.IsNullOrEmpty(Declaration.Currency) &&
-            !String.IsNullOrEmpty(Declaration.InvoicePath);
+            return _nullCheckService.CheckDeclaration(Declaration);
 
         });
     }

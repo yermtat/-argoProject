@@ -1,9 +1,11 @@
 ﻿using GalaSoft.MvvmLight;
+using Prism.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using СargoProject.Models;
 using СargoProject.Services.Clsasses;
 using СargoProject.Services.Interfaces;
@@ -14,33 +16,34 @@ class SignUpViewModel : ViewModelBase
 {
     private readonly IUserManagerService _userManagerService;
     private readonly INavigationService _navigationService;
+    private readonly INullCheckService _nullCheckService;
+    private UserModel user = new();
 
-    public SignUpViewModel(IUserManagerService userManagerService, INavigationService navigationService)
+    public SignUpViewModel(IUserManagerService userManagerService, INavigationService navigationService, INullCheckService nullCheckService)
     {
         _userManagerService = userManagerService;
         _navigationService = navigationService;
+        _nullCheckService = nullCheckService;
     }
 
-    public UserModel User { get; set; } = new();
-    public string PasswordConfirmation { get; set; } 
+    public UserModel User { get => user; set => Set(ref user, value); }
+    public string PasswordConfirmation { get; set; }
 
-    public MyRelayCommand ConfirmCommand { get => new(
+    public MyRelayCommand ConfirmCommand
+    {
+        get => new(
         () =>
         {
             _userManagerService.CreateNewUser(User);
             PasswordConfirmation = null;
+            User = new();
             _navigationService.NavigateTo<LoginViewModel>();
 
         },
         () =>
         {
-            return !String.IsNullOrEmpty(User.Username) &&
-            !String.IsNullOrEmpty(User.Password) &&
+            return _nullCheckService.CheckUser(User) &&
             !String.IsNullOrEmpty(PasswordConfirmation) &&
-            User.Info.PhoneNumber != 0 &&
-            !String.IsNullOrEmpty(User.Info.PassportSerial) &&
-            !String.IsNullOrEmpty(User.Info.Fin) && User.Info.Fin.Length == 6 &&
-            !String.IsNullOrEmpty(User.Info.Address) &&
             User.Password == PasswordConfirmation;
         });
     }
@@ -55,4 +58,6 @@ class SignUpViewModel : ViewModelBase
         _navigationService.NavigateTo<LoginViewModel>();
     });
     }
+
+
 }

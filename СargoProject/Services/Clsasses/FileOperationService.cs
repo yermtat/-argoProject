@@ -28,4 +28,12 @@ class FileOperationService : IFileOperationService
 
         sw.WriteLine(json);
     }
+
+    public string LoadAdmin(string filePath) 
+    {
+        using FileStream fs = new(filePath, FileMode.Open);
+        using StreamReader sr = new(fs);
+
+        return sr.ReadToEnd();
+    }
 }

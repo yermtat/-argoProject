@@ -11,4 +11,6 @@ interface IFileOperationService
     public void SaveToFile(string filePath, string json);
 
     public string LoadFromFile(string filePath);
+
+    public string LoadAdmin(string filePath);
 }

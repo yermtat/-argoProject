@@ -48,6 +48,17 @@
                         Command="{Binding DeclareCommand}">
 
             </Button>
+
+            <Button Height="50"
+                        Width="200"
+                        Margin="10" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
+                        Background="MediumSeaGreen"
+                        Foreground="AliceBlue"
+                        Content="Quit"
+                        FontSize="25"
+                        Command="{Binding QuitCommand}">
+
+            </Button>
         </StackPanel>
 
         <StackPanel Grid.Row="1"

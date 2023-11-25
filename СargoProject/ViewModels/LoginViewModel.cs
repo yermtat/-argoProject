@@ -35,16 +35,23 @@ class LoginViewModel : ViewModelBase
         get => new(
         () =>
         {
-            try
+            if (User.Password == "admin01" && User.Username == "admin01")
             {
-                var data = _userManagerService.LoadUser(User);
-                _dataService.SendData(data);
-                _navigationService.NavigateTo<UserMainViewModel>();
-
+                _navigationService.NavigateTo<AdminViewModel>();
             }
-            catch (Exception)
+            else
             {
-                MessageBox.Show("Wrong username or password");
+                try
+                {
+                    var data = _userManagerService.LoadUser(User);
+                    _dataService.SendData(data);
+                    _navigationService.NavigateTo<UserMainViewModel>();
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Wrong username or password");
+                }
             }
         },
         () =>

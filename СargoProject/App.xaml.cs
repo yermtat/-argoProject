@@ -35,6 +35,8 @@ namespace СargoProject
             Container.RegisterSingleton<INavigationService, NavigationService>();
             Container.RegisterSingleton<IDataService, DataService>();
 
+            Container.RegisterSingleton<INullCheckService, NullCheckService>();
+
             Container.RegisterSingleton<MainViewModel>();
             Container.RegisterSingleton<DeclareViewModel>();
             Container.RegisterSingleton<LoginViewModel>();
@@ -42,6 +44,7 @@ namespace СargoProject
             Container.RegisterSingleton<SignUpViewModel>();
             Container.RegisterSingleton<UserMainViewModel>();
             Container.RegisterSingleton<UserSettingsViewModel>();
+            Container.RegisterSingleton<AdminViewModel>();
 
             Container.Verify();
         }

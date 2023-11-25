@@ -103,6 +103,16 @@ class UserMainViewModel : ViewModelBase
         });
     }
 
+    public MyRelayCommand QuitCommand
+    {
+        get => new(
+        () =>
+        {
+            _navigationService.NavigateTo<LoginViewModel>();
+            User = new();
+        });
+    }
+
     public MyRelayCommand PackagesCommand
     {
         get => new(

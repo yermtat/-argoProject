@@ -33,6 +33,10 @@
                 <views:UserSettingsView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewModels:AdminViewModel}">
+                <views:AdminView/>
+            </DataTemplate>
+
 
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />

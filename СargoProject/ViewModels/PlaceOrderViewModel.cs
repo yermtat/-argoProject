@@ -16,14 +16,16 @@ class PlaceOrderViewModel : ViewModelBase
     private readonly INavigationService _navigationService;
     private readonly IDataService _dataService;
     private readonly IMessenger _messenger;
+    private readonly INullCheckService _nullCheckService;
 
     public OrderModel Order { get; set; } = new();
 
-    public PlaceOrderViewModel(INavigationService navigationService, IDataService dataService, IMessenger messenger)
+    public PlaceOrderViewModel(INavigationService navigationService, IDataService dataService, IMessenger messenger, INullCheckService nullCheckService)
     {
         _navigationService = navigationService;
         _dataService = dataService;
         _messenger = messenger;
+        _nullCheckService = nullCheckService;
     }
 
     public MyRelayCommand ConfirmButton
@@ -39,10 +41,7 @@ class PlaceOrderViewModel : ViewModelBase
         },
         () =>
         {
-            return !String.IsNullOrEmpty(Order.Link) &&
-            !String.IsNullOrEmpty(Order.Colour) &&
-            Order.Quantity != 0 && Order.Price != 0 &&
-            Order.DeliveryPrice != 0;
+            return _nullCheckService.CheckOrder(Order);
 
         });
     }

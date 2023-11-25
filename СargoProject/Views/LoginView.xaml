@@ -52,19 +52,6 @@
                          >
                 </TextBox>
 
-                <!--<PasswordBox
-                         Height="100"
-                         Width="450"
-                         Margin=""
-                         FontSize="35"
-                         Style="{DynamicResource MaterialDesignFloatingHintRevealPasswordBox}"
-                         md:HintAssist.Hint="Password"
-                         md:HintAssist.HintOpacity="0.5"
-                         md:HintAssist.Foreground="CadetBlue"
-                         md:TextFieldAssist.UnderlineBrush="Black">
-                    
-                </PasswordBox>-->
-
                 <Button Height="50"
                         Width="200"
                         Margin="10" Style="{DynamicResource MaterialDesignPaperSecondaryDarkButton}"
